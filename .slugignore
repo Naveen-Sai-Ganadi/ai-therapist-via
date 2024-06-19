@@ -1,0 +1,16 @@
+*.md
+tests/
+docs/
+.git/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.zip
+*.tar.gz
+*.whl
+*.egg-info/
+env/
+venv/
