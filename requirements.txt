@@ -8,7 +8,6 @@ transformers
 facenet-pytorch
 opencv-python
 torch
-tensorflow
 tf-keras
 requests
 groq
@@ -16,7 +15,5 @@ fer
 sqlalchemy
 asyncpg
 psycopg2-binary
-python-dotenv
 greenlet
 pymongo
-gunicorn
