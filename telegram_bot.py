@@ -18,7 +18,8 @@ TELEGRAM_BOT_API_TOKEN = os.getenv('TELEGRAM_BOT_API_TOKEN')
 STRIPE_API_KEY = os.getenv('STRIPE_API_KEY')
 STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET')
 MONGO_URI = os.getenv('MONGO_URI')
-NGROK_URL = os.getenv('NGROK_URL')
+# NGROK_URL = os.getenv('NGROK_URL')
+HEROKU_APP_URL= os.getenv('APP_URL')
 
 # Configure Stripe
 stripe.api_key = STRIPE_API_KEY
@@ -203,8 +204,10 @@ async def create_checkout_session(user_id):
             'quantity': 1,
         }],
         mode='subscription',
-        success_url=f"{NGROK_URL}/success.html",
-        cancel_url=f"{NGROK_URL}/cancel.html",
+        # success_url=f"{NGROK_URL}/success.html",
+        # cancel_url=f"{NGROK_URL}/cancel.html",
+        success_url=f"{HEROKU_APP_URL}/success.html",
+        cancel_url=f"{HEROKU_APP_URL}/cancel.html",
         client_reference_id=str(user_id),
     )
     return session.url
